@@ -1,0 +1,64 @@
+
+
+<div class="container">
+    <spinner [loading]="loading"></spinner>
+    <nav class="navbar navbar-default navbar-left">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-brand"><img src="" alt="Laravel Angular logo"></a>
+        </div>
+        <!-- Collection of nav links, forms, and other content for toggling -->
+        <div id="navbarCollapse" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">HOME</a></li>
+                <li><a [routerLink]="['/products']">PRODUCTS</a></li>
+                
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a [routerLink]="['/login']">Login</a></li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-6 col-md-offset-3 col-lg-offset-0">
+        <div class="well">
+        <h3 align="center">Product Search</h3>
+          <form class="form-horizontal" role="form" (submit)="searchProducts($event, search.value, startdate.value, enddate.value ,price.value)">
+            <div class="form-group">
+              <label for="search" class="control-label">Poduct Name or Sku</label>
+              <input type="text" name="" class="form-control" id="search" #search>
+            </div>
+            
+            <div class="form-group">
+              <label for="startdate" class="control-label">Start Date</label>
+              <input class="form-control" id="startdate" type="text" name="" #startdate/>
+            </div>
+            <div class="form-group">
+              <label for="enddate" class="control-label">End Date</label>
+              <input class="form-control" id="enddate" type="text" name="" #enddate/>
+            </div>
+            <div class="form-group">
+              <label for="pricefrom" class="control-label">Min Price</label>
+              <div class="input-group">
+                <div class="input-group-addon" id="basic-addon1">$</div>
+                <input type="text" class="form-control" name="" id="price" aria-describedby="basic-addon1" #price>
+              </div>
+            </div>
+            <p class="text-center"><button type="submit" class="btn btn-danger glyphicon glyphicon-search"></button></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

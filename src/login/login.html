@@ -1,0 +1,44 @@
+<div>
+  <spinner [loading]="loading"></spinner>
+  <nav class="nav has-shadow">
+    <div class="container">
+      <div class="nav-left">
+        <a class="nav-item">
+          <img src="https://angular.io/resources/images/logos/angular2/angular.png" alt="Laravel Angular logo">
+        </a>
+        <a class="nav-item is-tab is-hidden-mobile" [routerLink]="['/register']">REGISTER</a>
+        <a class="nav-item is-tab is-hidden-mobile" [routerLink]="['/products']">PRODUCTS</a>
+        <a class="nav-item is-tab is-hidden-mobile is-active">LOGIN</a>
+      </div>
+      <span class="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+      <div class="nav-right nav-menu">
+        <a class="nav-item is-tab is-hidden-tablet" [routerLink]="['/register']">REGISTER</a>
+        <a class="nav-item is-tab is-hidden-tablet is-active">LOGIN</a>
+      </div>
+    </div>
+  </nav>
+</div>
+<div class="login center-block">
+  <h4 class="subtitle">Login</h4>
+  <form role="form" (submit)="login($event, username.value, password.value)">
+    <p class="control has-icon">
+      <input class="input" type="email" placeholder="Email" id="username" #username >
+      <span class="icon is-small">
+        <i class="fa fa-envelope"></i>
+      </span>
+    </p>
+    <p class="control has-icon">
+      <input class="input" type="password" placeholder="Password" id="password" #password>
+      <span class="icon is-small">
+        <i class="fa fa-lock"></i>
+      </span>
+    </p>
+    <p class="control">
+      <button type="submit" class="button is-success">Login</button>
+    </p>
+  </form>
+</div>

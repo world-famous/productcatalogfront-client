@@ -1,0 +1,58 @@
+<div>
+  <spinner [loading]="loading"></spinner>
+  <nav class="nav has-shadow">
+    <div class="container">
+      <div class="nav-left">
+        <a class="nav-item">
+          <img src="https://angular.io/resources/images/logos/angular2/angular.png" alt="Laravel Angular logo">
+        </a>
+        <a class="nav-item is-tab is-hidden-mobile is-active">REGISTER</a>
+        <a class="nav-item is-tab is-hidden-mobile" [routerLink]="['/login']">LOGIN</a>
+      </div>
+      <span class="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+      <div class="nav-right nav-menu">
+        <a class="nav-item is-tab is-hidden-tablet is-active">REGISTER</a>
+        <a class="nav-item is-tab is-hidden-tablet" [routerLink]="['/login']">LOGIN</a>
+      </div>
+    </div>
+  </nav>
+</div>
+<div class="register center-block">
+  <h4 class="subtitle">Register</h4>
+  <form role="form" (submit)="register($event, name.value, password.value, email.value, gender.value)">
+    <p class="control has-icon">
+      <input class="input" type="email" placeholder="Email" id="email" #email >
+      <span class="icon is-small">
+        <i class="fa fa-envelope"></i>
+      </span>
+    </p>
+    <p class="control has-icon">
+      <input class="input" type="text" placeholder="Name" id="name" #name >
+      <span class="icon is-small">
+        <i class="fa fa-user"></i>
+      </span>
+    </p>
+    <p class="control has-icon">
+      <input class="input" type="password" placeholder="Password" id="password" #password>
+      <span class="icon is-small">
+        <i class="fa fa-lock"></i>
+      </span>
+    </p>
+    <p class="control has-icon">
+      <select class="input" id="gender" #gender>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+      <span class="icon is-small">
+        <i class="fa fa-male"></i>
+      </span>
+    </p>
+    <p class="control">
+      <button type="submit" class="button is-success">Register</button>
+    </p>
+  </form>
+</div>

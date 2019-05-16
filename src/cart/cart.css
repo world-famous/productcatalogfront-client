@@ -1,0 +1,7 @@
+.cart{
+    margin-top : 20px;
+}
+
+.cart .icon{
+    cursor: pointer;
+}

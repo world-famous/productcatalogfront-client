@@ -1,0 +1,51 @@
+<div>
+  <spinner [loading]="loading"></spinner>
+  <nav class="nav has-shadow">
+    <div class="container">
+      <div class="nav-left">
+        <a class="nav-item">
+          <img src="https://angular.io/resources/images/logos/angular2/angular.png" alt="Laravel Angular logo">
+        </a>
+        <a class="nav-item is-tab is-hidden-mobile" [routerLink]="['/home']">HOME</a>
+        <a class="nav-item is-tab is-hidden-mobile" [routerLink]="['/products']">PRODUCTS</a>
+        <a class="nav-item is-tab is-hidden-mobile is-active" >CART</a>
+      </div>
+      <span class="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+      <div class="nav-right nav-menu">
+        <a class="nav-item is-tab is-hidden-tablet" [routerLink]="['/home']">HOME</a>
+        <a class="nav-item is-tab is-hidden-tablet" [routerLink]="['/products']">PRODUCTS</a>
+        <a class="nav-item is-tab is-hidden-tablet is-active" >CART</a>
+        <a class="nav-item is-tab" role="button" (click)="logout()">LOGOUT</a>
+      </div>
+    </div>
+  </nav>
+  <div class="cart">
+    Your current cart total is <strong>{{total}} Rs.</strong>
+    <table  class="table">
+        <thead>
+            <th>Product</th>
+            <th>Category</th>
+            <th>Quantity</th>
+            <th>Sub Total</th>
+            <th>Remove</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of cartItems; let i = index;">
+                <td>{{item.product.product_name}}</td>
+                <td>{{item.product.product_category}}</td>
+                <td>{{item.quantity}}</td>
+                <td>{{item.price}}</td>
+                <td>
+                    <span class="icon" title="Remove One"><i class="fa fa-minus-square-o" (click)="removeItems( 1, item.product.id)"></i></span>
+                    <span class="icon" title="Remove All"><i class="fa fa-trash-o" (click)="removeItems(item.quantity, item.product.id)"></i></span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a class="button is-danger" role="button" (click)="emptyCart()">Empty Cart</a>
+  </div>
+</div>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <title>Laravel Angular 2 Cart</title>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <base href="/">
+  <!-- styles -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.3.2/css/bulma.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+ <!-- ... -->
+  <script type="text/javascript" src="./bower_components/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="./bower_components/moment/min/moment.min.js"></script>
+  <script type="text/javascript" src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="./bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+  <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="./bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+  
+
+  <script type="text/javascript" src="/node_modules/jwt-decode/build/jwt-decode.js"></script>
+
+</head>
+<body>
+
+  <auth-app>
+    Loading...
+  </auth-app>
+
+  <!-- Commmon files to be cached -->
+  <script src="/build/common.js"></script>
+  <!-- Angular2 files -->
+  <script src="/build/vendor.js"></script>
+  <!-- App script -->
+  <script src="/build/app.js"></script>
+  <script type="text/javascript">
+    $(function() {
+            $('#startdate').datetimepicker({
+                format: 'YYYY-MM-DD'
+            });
+            $('#enddate').datetimepicker({
+                format: 'YYYY-MM-DD'
+            });
+            $('#startdate1').datetimepicker({
+                format: 'YYYY-MM-DD'
+            });
+            $('#enddate1').datetimepicker({
+                format: 'YYYY-MM-DD'
+            });
+        });
+  </script>
+<!--   <script type='text/javascript'>
+
+(function()
+{
+  if( window.localStorage )
+  {
+    if( !localStorage.getItem( 'firstLoad' ) )
+    {
+      localStorage[ 'firstLoad' ] = true;
+      window.location.reload();
+    }  
+    else
+      localStorage.removeItem( 'firstLoad' );
+  }
+})();
+
+</script> -->
+  </body>
+</html>
